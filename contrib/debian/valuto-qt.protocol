@@ -1,0 +1,11 @@
+[Protocol]
+exec=valuto-qt '%u'
+protocol=valuto
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

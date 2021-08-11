@@ -1,0 +1,26 @@
+# /etc/conf.d/valutod: config file for /etc/init.d/valutod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/valuto/valuto.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/valutod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/valutod.pid"
+
+# Where to write valutod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/valutod"
+
+# User and group to own valutod process
+#BITCOIND_USER="valuto"
+#BITCOIND_GROUP="valuto"
+
+# Path to valutod executable
+#BITCOIND_BIN="/usr/bin/valutod"
+
+# Nice value to run valutod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
