@@ -2034,11 +2034,11 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
         return true;
     }
 
-    if (pindex->nHeight <= Params().LAST_POW_BLOCK() && block.IsProofOfStake())
+    if ( ( ( pindex->nHeight >= 0 && pindex->nHeight <= 250) || (pindex->nHeight > 840136 && pindex->nHeight <= 840336) ) && block.IsProofOfStake())
         return state.DoS(100, error("ConnectBlock() : PoS period not active"),
             REJECT_INVALID, "PoS-early");
 
-    if (pindex->nHeight > Params().LAST_POW_BLOCK() && block.IsProofOfWork()) {
+    if ( ( ( pindex->nHeight > 250 && pindex->nHeight <= 840136 ) || pindex->nHeight > 840336 ) && block.IsProofOfWork()) {
         return state.DoS(100, error("ConnectBlock() : PoW period ended"), REJECT_INVALID, "PoW-ended");
     }
 

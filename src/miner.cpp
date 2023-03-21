@@ -112,7 +112,8 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
     if (fDebug) LogPrintf("CreateNewBlock() : chainActive.Height() = %s \n", chainActive.Height());
 
-    if (chainActive.Height() >= Params().LAST_POW_BLOCK()) {
+
+    if ( (chainActive.Height() >= 250 && chainActive.Height() <= 840136 ) || chainActive.Height() >= 840336 ) {
         txNew.vout[0].scriptPubKey = scriptPubKeyIn;
     }
 
